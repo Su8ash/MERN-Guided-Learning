@@ -1,4 +1,5 @@
 const app = require("./app");
+const connectDatabase = require("./db/Database");
 
 // handling uncaught Exception
 process.on("uncaughtException", (err) => {
@@ -13,6 +14,9 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
         path: "config/.env"
     });
 }
+
+// Connect to Databse
+connectDatabase();
 
 //create Server
 const server = app.listen(process.env.PORT, () => {
