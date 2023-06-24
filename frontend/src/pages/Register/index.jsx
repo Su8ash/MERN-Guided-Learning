@@ -2,7 +2,11 @@ import { React, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import styles from "../../styles/styles";
 import { Link } from "react-router-dom";
+
 import { RxAvatar } from "react-icons/rx";
+
+import axios from "axios";
+import { server } from "../../server";
 
 const RegisterPage = () => {
     const [email, setEmail] = useState("");
@@ -27,6 +31,21 @@ const RegisterPage = () => {
         newForm.append("name", name);
         newForm.append("email", email);
         newForm.append("password", password);
+
+        axios.post(`${server}/user/create-user`, newForm, config)
+            .then((res) => {
+                console.log("Data got it");
+                // toast.success(res.data.message);
+                // setName("");
+                // setEmail("");
+                // setPassword("");
+                // setAvatar();
+            })
+            .catch((error) => {
+                console.log("Data Error");
+                console.log(error.response);
+                // toast.error(error.response.data.message);
+            });
 
     };
 
