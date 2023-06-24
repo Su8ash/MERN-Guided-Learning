@@ -1,4 +1,4 @@
-import { LoginPage, SignupPage } from './Routes';
+import { ActivationPage, LoginPage, SignupPage } from './Routes';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignupPage />} />
+        <Route path="/activation/:activation_token" element={<ActivationPage />} />
       </Routes>
     </BrowserRouter>
   );

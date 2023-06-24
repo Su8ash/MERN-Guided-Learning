@@ -35,15 +35,17 @@ const RegisterPage = () => {
         axios.post(`${server}/user/create-user`, newForm, config)
             .then((res) => {
                 console.log("Data got it");
+                alert(res.data.message);
                 // toast.success(res.data.message);
-                // setName("");
-                // setEmail("");
-                // setPassword("");
-                // setAvatar();
+                setName("");
+                setEmail("");
+                setPassword("");
+                setAvatar();
             })
             .catch((error) => {
                 console.log("Data Error");
                 console.log(error.response);
+                alert(error.response.data.message)
                 // toast.error(error.response.data.message);
             });
 
