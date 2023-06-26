@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ActivationPage, LoginPage, SignupPage } from './Routes';
+import { ActivationPage, HomePage, LoginPage, SignupPage } from './Routes';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from 'react';
 import { server } from './server';
@@ -35,6 +35,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignupPage />} />
         <Route path="/activation/:activation_token" element={<ActivationPage />} />
