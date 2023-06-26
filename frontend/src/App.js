@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ActivationPage, HomePage, LoginPage, SignupPage } from './Routes';
+import { ActivationPage, BestSellingPage, EventsPage, FAQPage, HomePage, LoginPage, ProductsPage, SignupPage } from './Routes';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from 'react';
 import { server } from './server';
@@ -39,6 +39,14 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignupPage />} />
         <Route path="/activation/:activation_token" element={<ActivationPage />} />
+
+
+        <Route path="/products" element={<ProductsPage />} />
+
+        <Route path="/best-selling" element={<BestSellingPage />} />
+        <Route path="/events" element={<EventsPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+
       </Routes>
     </BrowserRouter>
   );

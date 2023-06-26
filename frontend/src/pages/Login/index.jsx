@@ -28,9 +28,10 @@ const LoginPage = () => {
                 console.log(res.data);
                 alert("Login Success!");
                 navigate("/");
-                // window.location.relaoad();
+                window.location.reload();
             })
             .catch((err) => {
+                console.log(err);
                 alert(err.response.data.message);
             });
     }

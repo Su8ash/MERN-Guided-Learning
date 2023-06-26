@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 import { backend_url } from "../../server";
 
 const Header = ({ activeHeading }) => {
-    const { isAuthenticated, user } = useSelector((state) => state.user);
+    const { isAuthenticated, user } = useSelector((state) => state.userStore);
     const [searchTerm, setSearchTerm] = useState("");
     const [searchData, setSearchData] = useState(null);
     const [active, setActive] = useState(false);
